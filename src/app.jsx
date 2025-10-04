@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Section from "./components/section.jsx";
+import Section from "./components/section";
 import "./components/section.css";
 
 const sections = [
