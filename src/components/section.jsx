@@ -57,7 +57,7 @@ export default function Section({ number, name, colors }) {
       {hovered && (
         <img
           className={"image-styling" + (clicked ? " fade-in" : "")}
-          src={"./" + colors + ".jpg"}
+          src={"/" + colors + ".jpg"}
           alt={name}
         />
       )}
