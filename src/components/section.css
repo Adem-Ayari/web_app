@@ -1,0 +1,279 @@
+:root {
+  --color-section-1: green;
+  --color-section-2: rgb(227, 40, 227);
+  --color-section-3: orange;
+  --color-section-4: pink;
+
+  --z-base:    1;
+  --z-section: 2;
+  --z-overlay: 3;
+  --z-ui:      4;
+
+  --transition-expand: 1s ease;
+  --section-width: 25%;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: white;
+  color: black;
+  display: flex;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.app-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sections-wrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+}
+
+.section {
+  position: absolute;
+  width: var(--section-width);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  background-color: white;
+  z-index: var(--z-base);
+}
+
+.section1 .part1 { color: var(--color-section-1); }
+.section2 .part1 { color: var(--color-section-2); }
+.section3 .part1 { color: var(--color-section-3); }
+.section4 .part1 { color: var(--color-section-4); }
+
+.section.active {
+  position: fixed;
+  align-items: center;
+  text-align: center;
+  animation: expand var(--transition-expand) forwards;
+}
+
+.section.active .part2,
+.section.active .part3 {
+  width: auto;
+}
+
+.section.active .view {
+  margin: 1rem auto 0;
+}
+
+.section.unactive {
+  position: absolute;
+  animation: unexpand var(--transition-expand) forwards;
+}
+
+@keyframes expand {
+  to { width: 100%; left: 0; z-index: var(--z-section); }
+}
+
+@keyframes unexpand {
+  from { width: 100%; left: 0; z-index: var(--z-section); }
+  to   { width: var(--section-width); z-index: var(--z-section); }
+}
+
+.tophead {
+  position: absolute;
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--z-ui);
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  width: fit-content;
+  height: 3rem;
+}
+
+.coolline {
+  position: absolute;
+  top: 4rem;
+  right: 0;
+  z-index: var(--z-ui);
+  width: 100%;
+  color: grey;
+}
+
+.coolback {
+  position: absolute;
+  top: 15rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+  font-size: 10rem;
+  color: white;
+  white-space: nowrap;
+}
+
+.returning {
+  position: absolute;
+  top: 10rem;
+  left: 2rem;
+  z-index: var(--z-ui);
+  width: 5rem;
+  height: 2rem;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.part2 {
+  width: 10rem;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.part3 {
+  font-size: 1rem;
+  width: 14%;
+}
+
+.buttons {
+  position: relative;
+  z-index: var(--z-ui);
+  width: 5rem;
+  height: 2rem;
+  padding: 0;
+  background-color: black;
+  color: grey;
+  border-radius: 1rem;
+  opacity: 0.7;
+  cursor: pointer;
+  border: none;
+}
+
+.buttons:hover {
+  filter: invert(1);
+}
+
+.buttons.Product {
+  filter: invert(1);
+  cursor: default;
+}
+
+.view {
+  width: 8rem;
+  height: 3rem;
+  margin: 1rem 8rem 0 0;
+  padding: 0.5rem;
+  background-color: transparent;
+  color: grey;
+  border: 0.0125rem solid grey;
+  border-radius: 2rem;
+  font-weight: lighter;
+  cursor: pointer;
+}
+
+.arrow {
+  margin-left: 1rem;
+  color: black;
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+
+.hoveredarrow {
+  background-color: white;
+  border-radius: 50%;
+  color: black;
+}
+
+.image-styling {
+  width: 7rem;
+  height: 35vh;
+  align-self: center;
+  transform: translateY(5rem);
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.Price {
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 3rem;
+  animation: fade-in 1s ease forwards;
+}
+
+.order-size {
+  position: absolute;
+  right: 2rem;
+  z-index: var(--z-base);
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: black;
+  color: white;
+  border: 0.2rem solid black;
+  border-radius: 50%;
+  opacity: 0.7;
+  cursor: pointer;
+  animation: fade-in 1s ease forwards;
+}
+
+.order-size:hover,
+.order-size.invertion {
+  filter: invert(1);
+}
+
+.custom1 { top: 14rem; }
+.custom3 { top: 17rem; }
+.custom5 { top: 20rem; }
+
+.hovered {
+  color: white;
+  border: none;
+  transform: translateY(10rem);
+  transition: transform 0.5s ease;
+}
+
+.coolappear {
+  opacity: 0;
+  animation: appear 1s ease forwards;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fade-in 1s ease forwards;
+}
+
+.fadation {
+  animation: fade 1s ease forwards;
+}
+
+@keyframes appear {
+  to { opacity: 1; transform: translateY(2rem); }
+}
+
+@keyframes fade-in {
+  0%   { opacity: 0; }
+  50%  { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+@keyframes fade {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.6; }
+  100% { opacity: 0; }
+}

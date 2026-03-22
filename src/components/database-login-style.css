@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background-image: url(nicestuff.png);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper {
+  color: white;
+  width: 30%;
+  height: 70vh;
+  background: none;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  border: 0.25rem solid rgba(255, 157, 0, 0.3);
+  border-radius: 0.5rem;
+}
+.tagtitle {
+  position: absolute;
+  font-size: 5rem;
+  font-weight: 500;
+  top: 5rem;
+}
+.inputs1 {
+  position: absolute;
+  background-color: transparent;
+  border: 0.05rem solid rgba(0, 0, 0, 0.316);
+  width: 15rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  top: 15rem;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-content: center;
+}
+.mailima {
+  position: absolute;
+  top: 0.4rem;
+  width: 2rem;
+  height: 1.25rem;
+}
+#Email {
+  all: unset;
+  position: absolute;
+  top: 0.5rem;
+  left: 2rem;
+  background-color: transparent;
+  color: black;
+  border: none;
+}
+.inputs2 {
+  position: absolute;
+  background-color: transparent;
+  border: 0.05rem solid rgba(0, 0, 0, 0.316);
+  width: 15rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  top: 19rem;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-content: center;
+}
+.pass {
+  position: absolute;
+  top: 0.4rem;
+  width: 2rem;
+  height: 1.25rem;
+}
+#Password {
+  all: unset;
+  position: absolute;
+  top: 0.5rem;
+  left: 2rem;
+  background-color: transparent;
+  color: black;
+  border: none;
+}
+.login {
+  all: unset;
+  position: absolute;
+  bottom: 7rem;
+  width: 12rem;
+  height: 4rem;
+  text-align: center;
+  border-radius: 2.5rem;
+  background-color: grey;
+  font-size: 3rem;
+}
+.forgotten {
+  color: rgba(0, 0, 255, 0.54);
+  position: absolute;
+  bottom: 14rem;
+  font-size: 1rem;
+  right: 14.5rem;
+}
+.unknown {
+  color: white;
+  position: absolute;
+  bottom: 4.5rem;
+  font-size: 1.5rem;
+  right: 12.3rem;
+}
