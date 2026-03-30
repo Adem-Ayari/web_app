@@ -1,6 +1,6 @@
 # Juicy — A React Product Showcase
 
-A minimal, animated product showcase built as a hands-on exercise in React state management and CSS animation. The live version is at https://web-app-git-master-c-o-d-e-f-a-t-es-projects.vercel.app.
+A minimal, animated product showcase built as a hands-on exercise in React state management and CSS animation. The live version is at https://web-app-85en.vercel.app/.
 
 ---
 
